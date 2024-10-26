@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+</head>
+<body>
+    <header class="app-header">
+        <h1>{% block title %} {% endblock %}</h1>
+    </header>
+    <aside class="app-sidebar">
+        <div class="app-sidebar_header">
+            <img src="{{ url_for('static', filename='images/flask.svg') }}" alt="">
+            <h1>Flask App</h1>
+        </div>
+
+        <ul class="app-sidebar_menu">
+            <li class="app-sidebar_menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            <li class="app-sidebar_menu-item">
+                <a href="/product">
+                    Product
+                </a>
+            </li>
+        </ul>
+        
+    </aside>
+    <main class="app-container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    
+</body>
+</html>
